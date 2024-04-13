@@ -1,0 +1,25 @@
+.bodycss {
+  background-color: rgb(153, 141, 207);
+  max-width: 60%;
+  margin: 20px;
+}
+#addbut {
+  align-items: end;
+}
+.card {
+  margin: 5px;
+  border: 5px solid rgb(239, 71, 71);
+  background-color: olive;
+  text-align: center;
+  font-size: 22px;
+  padding-bottom: 5px;
+}
+
+@media screen and (max-width: 888px) {
+  .bodycss {
+    max-width: 95%;
+  }
+  textarea {
+    width: 250px;
+  }
+}
