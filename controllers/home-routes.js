@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Frequent, School, Money, WebDev } = require("../models");
+const { Frequent, School, Money, WebDev, Bookmark } = require("../models");
 
 router.get("/", async (req, res) => {
   try {
@@ -21,4 +21,22 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/add", async (req, res) => {
+  res.render("add");
+});
+
+
+router.post("/add", async (req, res) => {
+  try {
+    const addUrl = await Bookmark.create({
+      group:req.body.grpEl,
+      title:req.body.titleEl,
+      url:req.body.urlEl,
+    });
+    res.status(200).json(addUrl);
+  } catch (err) {
+    console.log(err);
+    res.status(501).json(err);
+  }
+});
 module.exports = router;

@@ -4,7 +4,10 @@
   margin: 20px;
 }
 #addbut {
-  align-items: end;
+  font-size: 0.75em;
+}
+#addbut:hover {
+  text-shadow: rgb(95, 240, 56) 1px 0 10px;
 }
 .card {
   margin: 5px;
@@ -18,6 +21,9 @@
 @media screen and (max-width: 888px) {
   .bodycss {
     max-width: 95%;
+  }
+  #addhb {
+    text-align: center;
   }
   textarea {
     width: 250px;

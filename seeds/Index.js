@@ -3,6 +3,7 @@ const seedFrequent = require("./frequent");
 const seedSchool = require("./school");
 const seedWebDev = require('./webdev');
 const seedMoney = require('./money')
+const seedBookmark = require('./bookmark')
 require("dotenv").config();
 
 const seedAll = async () => {
@@ -11,6 +12,7 @@ const seedAll = async () => {
   await seedSchool();
   await seedWebDev();
   await seedMoney();
+  await seedBookmark();
 };
 
 seedAll();

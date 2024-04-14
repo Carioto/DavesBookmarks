@@ -1,0 +1,46 @@
+<div id="addhb">
+  <h3>Add Bookmark</h3>
+  <div class="p-2">
+    <div class="input-group mb-3">
+      <label class="input-group-text" for="grouppick">Group</label>
+      <select class="form-select" id="grouppick">
+        <option selected>Choose...</option>
+        <option value="regulars">Regulars</option>
+        <option value="school">School</option>
+        <option value="webdev">WebDev</option>
+        <option value="money">Money</option>
+      </select>
+    </div>
+  </div>
+  <div class="p-2">
+    <div class="input-group mb-3">
+      <span class="input-group-text">Title</span>
+      <input
+        type="text"
+        class="form-control"
+        aria-label="Sizing example input"
+        aria-describedby="title"
+        id="title"
+      />
+    </div>
+  </div>
+  <div class="p-2">
+    <div class="input-group mb-3">
+      <span class="input-group-text">Url</span>
+      <input
+        type="text"
+        class="form-control"
+        aria-label="Sizing example input"
+        aria-describedby="url"
+        id="url"
+      />
+    </div>
+    <div>
+      <br />
+      <button id="submit">Submit</button>
+      <button id="cancel">Cancel</button>
+      <p class="text-center" id="resel"></p>
+    </div>
+  </div>
+</div>
+<script src="/js/add.js"></script>
