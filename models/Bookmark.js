@@ -24,8 +24,8 @@ Bookmark.init(
     },
   },
   {
-    sequelize
-  }
+    sequelize,
+  },
 );
 
 module.exports = Bookmark;

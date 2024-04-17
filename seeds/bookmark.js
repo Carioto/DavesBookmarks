@@ -3,7 +3,7 @@ const { Bookmark } = require("../models");
 const bookmarkData = [
   {
     id: "1",
-    group: "Regulars",
+    group: "regulars",
     title: "Amazon",
     url: "https://www.amazon.com/ref=nav_logo",
   },

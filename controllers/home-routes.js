@@ -1,19 +1,37 @@
 const router = require("express").Router();
-const { Frequent, School, Money, WebDev, Bookmark } = require("../models");
-
+const { Bookmark } = require("../models");
 router.get("/", async (req, res) => {
   try {
-    const dbFreqData = await Frequent.findAll({});
-    const dbSchoolData = await School.findAll({});
-    const dbmoneyData = await Money.findAll({});
-    const dbWebDevData = await WebDev.findAll({});
+    const dbFreqData = await Bookmark.findAll({
+      where: {
+        group: "regulars",
+      },
+    });
+    const dbSchoolData = await Bookmark.findAll({
+      where: {
+        group: "school",
+      },
+    });
+    const dbmoneyData = await Bookmark.findAll({
+      where: {
+        group: "money",
+      },
+    });
+    const dbWebDevData = await Bookmark.findAll({
+      where: {
+        group: "webdev",
+      },
+    });
 
     const freqData = dbFreqData.map((url) => url.get({ plain: true }));
     const schoolData = dbSchoolData.map((url) => url.get({ plain: true }));
     const moneyData = dbmoneyData.map((url) => url.get({ plain: true }));
     const webdevData = dbWebDevData.map((url) => url.get({ plain: true }));
     res.render("home", {
-      freqData, schoolData, moneyData, webdevData
+      freqData,
+      schoolData,
+      moneyData,
+      webdevData,
     });
   } catch (err) {
     console.log(err);
@@ -25,13 +43,12 @@ router.get("/add", async (req, res) => {
   res.render("add");
 });
 
-
 router.post("/add", async (req, res) => {
   try {
     const addUrl = await Bookmark.create({
-      group:req.body.grpEl,
-      title:req.body.titleEl,
-      url:req.body.urlEl,
+      group: req.body.grpEl,
+      title: req.body.titleEl,
+      url: req.body.urlEl,
     });
     res.status(200).json(addUrl);
   } catch (err) {
