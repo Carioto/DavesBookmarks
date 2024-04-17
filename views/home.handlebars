@@ -1,4 +1,6 @@
-<div class="accordion accordion-flush" id="accordionFlushExample">
+<div id="box">
+<div id="home">
+<div class="accordion accordion-flush" id="bookmarks">
   <div class="accordion-item">
     <h2 class="accordion-header">
       <button
@@ -15,7 +17,7 @@
     <div
       id="flush-collapseOne"
       class="accordion-collapse collapse"
-      data-bs-parent="#accordionFlushExample"
+      data-bs-parent="#bookmarks"
     >
       <div class="accordion-body">
         {{#each freqData}}
@@ -48,7 +50,7 @@
     <div
       id="flush-collapseTwo"
       class="accordion-collapse collapse"
-      data-bs-parent="#accordionFlushExample"
+      data-bs-parent="#bookmarks"
     >
       <div class="accordion-body">
         {{#each schoolData}}
@@ -80,7 +82,7 @@
     <div
       id="flush-collapseThree"
       class="accordion-collapse collapse"
-      data-bs-parent="#accordionFlushExample"
+      data-bs-parent="#bookmarks"
     >
       <div class="accordion-body">
         {{#each webdevData}}
@@ -113,7 +115,7 @@
     <div
       id="flush-collapseFour"
       class="accordion-collapse collapse"
-      data-bs-parent="#accordionFlushExample"
+      data-bs-parent="#bookmarks"
     >
       <div class="accordion-body">
         {{#each moneyData}}
@@ -130,4 +132,51 @@
       </div>
     </div>
   </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button
+        class="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#flush-collapseFive"
+        aria-expanded="false"
+        aria-controls="flush-collapseFive"
+      >
+        Life Stuff
+      </button>
+    </h2>
+    <div
+      id="flush-collapseFive"
+      class="accordion-collapse collapse"
+      data-bs-parent="#bookmarks"
+    >
+      <div class="accordion-body">
+        {{#each lifeData}}
+          <section class="card">
+            <div class="list-group">
+              <a
+                href="{{url}}"
+                class="list-group-item list-group-item-action list-group-item-success"
+              >{{title}}</a>
+            </div>
+          </section>
+        {{/each}}
+
+      </div>
+    </div>
+  </div>
+
+</div>
+  <div id="aside"> 
+  <aside>
+        <h4>Random</h4>
+    <div class="list-group">
+    {{#each randData}}
+      <a href="{{url}}" class="list-group-item list-group-item-action" aria-current="true">{{url}}
+       </a>
+    {{/each}}
+    </div>
+  </aside>
+ </div>
+ </div>
 </div>

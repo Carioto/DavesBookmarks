@@ -3,12 +3,9 @@ const canbut = document.querySelector("#cancel");
 const resel = document.querySelector("#actiontext");
 
 const sendNewUrl = async (event) => {
-  const grpEl = document.querySelector("#grouppick").value;
-  const titleEl = document.querySelector("#title").value;
+  const grpEl = "random";
+  const titleEl = "none";
   const urlEl = document.querySelector("#url").value;
-  if (grpEl === "Choose..." || !titleEl || !urlEl){
-    resel.innerHTML = "Bookmark Failed - Incomplete Data";
-  }else{
   const response = await fetch("/add", {
     method: "POST",
     body: JSON.stringify({
@@ -26,7 +23,7 @@ const sendNewUrl = async (event) => {
     console.log(response);
     resel.innerHTML = "Bookmark Failed";
   }
-}};
+};
 
 function cancelNewUrl() {
   document.location.replace("/");

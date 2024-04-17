@@ -22,16 +22,30 @@ router.get("/", async (req, res) => {
         group: "webdev",
       },
     });
+    const dbRandData = await Bookmark.findAll({
+      where: {
+        group: "random",
+      },
+    });
+    const dbLifeData = await Bookmark.findAll({
+      where: {
+        group: "lifestuff",
+      },
+    });
 
     const freqData = dbFreqData.map((url) => url.get({ plain: true }));
     const schoolData = dbSchoolData.map((url) => url.get({ plain: true }));
     const moneyData = dbmoneyData.map((url) => url.get({ plain: true }));
     const webdevData = dbWebDevData.map((url) => url.get({ plain: true }));
+    const randData = dbRandData.map((url) => url.get({ plain: true }));
+    const lifeData = dbLifeData.map((url) => url.get({ plain: true }));
     res.render("home", {
       freqData,
       schoolData,
       moneyData,
       webdevData,
+      randData,
+      lifeData
     });
   } catch (err) {
     console.log(err);
@@ -41,6 +55,9 @@ router.get("/", async (req, res) => {
 
 router.get("/add", async (req, res) => {
   res.render("add");
+});
+router.get("/rand", async (req, res) => {
+  res.render("rand");
 });
 
 router.post("/add", async (req, res) => {
