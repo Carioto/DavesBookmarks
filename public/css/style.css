@@ -1,10 +1,15 @@
 .bodycss {
-  background-color: rgb(153, 141, 207);
+  background-color: rgb(12, 9, 26);
   max-width: 60%;
   margin: 20px;
+  color: blanchedalmond;
 }
 #headbar {
   margin: 0 40px;
+  max-width: 50%;
+}
+#headhead {
+  font-weight: 900;
 }
 #addbut,
 #addrand {
@@ -27,7 +32,7 @@
 }
 #addbut:hover,
 #addrand:hover {
-  text-shadow: rgb(95, 240, 56) 1px 0 10px;
+  color: chartreuse !important;
 }
 .card {
   margin: 5px;
@@ -41,6 +46,12 @@
 @media screen and (max-width: 888px) {
   .bodycss {
     max-width: 95%;
+  }
+  header {
+    padding: 30px;
+  }
+  #headhead {
+    margin-left: 20px;
   }
   #addhb {
     text-align: center;

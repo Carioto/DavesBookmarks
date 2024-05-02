@@ -6,27 +6,28 @@ const sendNewUrl = async (event) => {
   const grpEl = document.querySelector("#grouppick").value;
   const titleEl = document.querySelector("#title").value;
   const urlEl = document.querySelector("#url").value;
-  if (grpEl === "Choose..." || !titleEl || !urlEl){
+  if (grpEl === "Choose..." || !titleEl || !urlEl) {
     resel.innerHTML = "Bookmark Failed - Incomplete Data";
-  }else{
-  const response = await fetch("/add", {
-    method: "POST",
-    body: JSON.stringify({
-      grpEl,
-      titleEl,
-      urlEl,
-    }),
-    headers: { "Content-Type": "application/json" },
-  });
-  if (response.ok) {
-    document.location.reload();
-    console.log(response);
-    resel.innerHTML = "Bookmark Added";
   } else {
-    console.log(response);
-    resel.innerHTML = "Bookmark Failed";
+    const response = await fetch("/add", {
+      method: "POST",
+      body: JSON.stringify({
+        grpEl,
+        titleEl,
+        urlEl,
+      }),
+      headers: { "Content-Type": "application/json" },
+    });
+    if (response.ok) {
+      document.location.reload();
+      console.log(response);
+      resel.innerHTML = "Bookmark Added";
+    } else {
+      console.log(response);
+      resel.innerHTML = "Bookmark Failed";
+    }
   }
-}};
+};
 
 function cancelNewUrl() {
   document.location.replace("/");

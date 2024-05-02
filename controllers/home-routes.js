@@ -45,7 +45,7 @@ router.get("/", async (req, res) => {
       moneyData,
       webdevData,
       randData,
-      lifeData
+      lifeData,
     });
   } catch (err) {
     console.log(err);

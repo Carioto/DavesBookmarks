@@ -4,7 +4,7 @@ const resel = document.querySelector("#actiontext");
 
 const sendNewUrl = async (event) => {
   const grpEl = "random";
-  const titleEl = "none";
+  const titleEl = document.querySelector("#title").value;
   const urlEl = document.querySelector("#url").value;
   const response = await fetch("/add", {
     method: "POST",
