@@ -8,7 +8,7 @@ const sequelize = require("./config/connection");
 const helpers = require("./utils/helpers");
 
 const app = express();
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3025;
 
 const hbs = exphbs.create({ helpers });
 

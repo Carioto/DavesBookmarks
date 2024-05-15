@@ -5,7 +5,7 @@
   color: blanchedalmond;
 }
 #headbar {
-  margin: 0 40px;
+  margin: 0 35px;
   max-width: 50%;
 }
 #headhead {
@@ -43,7 +43,7 @@
   padding-bottom: 5px;
 }
 
-@media screen and (max-width: 888px) {
+@media screen and (max-width: 1000px) {
   .bodycss {
     max-width: 95%;
   }
